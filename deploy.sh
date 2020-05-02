@@ -5,6 +5,8 @@ project="image-server"
 build_name=$date-$project
 
 npm install
+
+mkdir images
 #Build and tag it with current date
 if docker build -f Dockerfile -t $build_name .; then
   echo "Build succeeded"
@@ -12,11 +14,8 @@ if docker build -f Dockerfile -t $build_name .; then
   echo $current_instance
   docker kill $current_instance
 
-  new_instance=$(docker run \
-  -it \
-  -d \
-  -p 8888:8888 \
-   --name $build_name \
+  new_instance=$(docker run -it -d -p 8888:8888
+--name $build_name \
    --mount type=bind,source="$(pwd)"/images,target=/storage/images \
    ba055e1ab76e \
    thumbor  --conf /thumbor.conf \

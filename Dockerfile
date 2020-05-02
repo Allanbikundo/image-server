@@ -3,7 +3,6 @@ FROM ubuntu:18.04
 LABEL key="latest"
 LABEL Maintainer="Allan Bikundo <allanbikundo@scalum.co.ke>"
 ENV DEBIAN_FRONTEND=noninteractive
-RUN mkdir images
 RUN apt-get update -y && apt-get upgrade -y
 RUN apt-get install -y python-pip
 # ssl packages
