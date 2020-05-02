@@ -4,6 +4,7 @@ date=$(date +"%Y-%m-%d_%H%M")
 project="image-server"
 build_name=$date-$project
 
+npm install
 #Build and tag it with current date
 if docker build -f Dockerfile -t $build_name .; then
   echo "Build succeeded"
