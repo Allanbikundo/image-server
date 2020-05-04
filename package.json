@@ -12,6 +12,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "author": "Allan Bikundo <allan.mageto@interswitchgroup.com>",
+  "author": "Allan Bikundo <allan.mageto@scalum.com>",
   "license": "ISC"
 }
